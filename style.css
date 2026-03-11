@@ -326,9 +326,155 @@ body {
 .px-btn-g:active { transform: translate(5px,5px); box-shadow: none; }
 
 /* ── SECTIONS ── */
-.section { padding: 5rem 0; }
-.section-dark { background: var(--surface); }
+.section { padding: 5rem 0; position: relative; }
 .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+
+/* World 1 – Forest / 地上世界 */
+.world-forest {
+  background-color: #0a1a0a;
+  background-image:
+    repeating-linear-gradient(0deg,   transparent, transparent 47px, rgba(0,180,0,.04) 47px, rgba(0,180,0,.04) 48px),
+    repeating-linear-gradient(90deg,  transparent, transparent 47px, rgba(0,180,0,.04) 47px, rgba(0,180,0,.04) 48px);
+}
+.world-forest::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 10% 90%, rgba(0,100,0,.35) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 50% at 90% 10%, rgba(0,160,0,.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* World 2 – Cave / 地下洞穴 */
+.world-cave {
+  background-color: #160a00;
+  background-image:
+    repeating-linear-gradient(0deg,   transparent, transparent 31px, rgba(180,80,0,.06) 31px, rgba(180,80,0,.06) 32px),
+    repeating-linear-gradient(90deg,  transparent, transparent 31px, rgba(180,80,0,.06) 31px, rgba(180,80,0,.06) 32px);
+}
+.world-cave::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 60% at 50% 100%, rgba(200,75,17,.3) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 30% at 80% 20%,  rgba(255,120,0,.1) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* World 3 – Ocean / 水下世界 */
+.world-ocean {
+  background-color: #030d20;
+  background-image:
+    repeating-linear-gradient(0deg,   transparent, transparent 23px, rgba(0,80,200,.06) 23px, rgba(0,80,200,.06) 24px),
+    repeating-linear-gradient(90deg,  transparent, transparent 63px, rgba(0,80,200,.05) 63px, rgba(0,80,200,.05) 64px);
+}
+.world-ocean::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 90% 50% at 50%   0%, rgba(0,60,180,.4)  0%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 15% 100%, rgba(0,120,200,.2) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 30% at 90%  60%, rgba(0,200,180,.1) 0%, transparent 60%);
+  pointer-events: none;
+}
+/* Bubble dots */
+.world-ocean::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(2px 2px at  8% 20%, rgba(100,200,255,.3) 0%, transparent 100%),
+    radial-gradient(2px 2px at 22% 55%, rgba(100,200,255,.25) 0%, transparent 100%),
+    radial-gradient(2px 2px at 45% 15%, rgba(100,200,255,.3) 0%, transparent 100%),
+    radial-gradient(2px 2px at 68% 70%, rgba(100,200,255,.2) 0%, transparent 100%),
+    radial-gradient(2px 2px at 80% 35%, rgba(100,200,255,.3) 0%, transparent 100%),
+    radial-gradient(2px 2px at 93% 80%, rgba(100,200,255,.25) 0%, transparent 100%),
+    radial-gradient(3px 3px at 35% 85%, rgba(100,200,255,.15) 0%, transparent 100%),
+    radial-gradient(2px 2px at 55% 45%, rgba(100,200,255,.3) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+/* World 4 – Ghost House / 鬼屋 */
+.world-ghost {
+  background-color: #0d0815;
+  background-image:
+    repeating-linear-gradient(0deg,   transparent, transparent 47px, rgba(150,0,200,.04) 47px, rgba(150,0,200,.04) 48px),
+    repeating-linear-gradient(90deg,  transparent, transparent 47px, rgba(150,0,200,.04) 47px, rgba(150,0,200,.04) 48px);
+}
+.world-ghost::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 60% at 20% 50%,  rgba(120,0,180,.25) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 50% at 85% 20%,  rgba(80,0,140,.2)   0%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 60% 100%, rgba(160,0,200,.15) 0%, transparent 60%);
+  pointer-events: none;
+}
+/* Star/eye dots */
+.world-ghost::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(1px 1px at 12% 18%, rgba(200,150,255,.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 34% 62%, rgba(200,150,255,.4) 0%, transparent 100%),
+    radial-gradient(2px 2px at 58% 28%, rgba(200,150,255,.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 75% 80%, rgba(200,150,255,.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 88% 42%, rgba(200,150,255,.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 20% 88%, rgba(200,150,255,.3) 0%, transparent 100%),
+    radial-gradient(2px 2px at 48% 72%, rgba(200,150,255,.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 92% 15%, rgba(200,150,255,.5) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+/* World 5 – Castle / 城堡 */
+.world-castle {
+  background-color: #180505;
+  background-image:
+    repeating-linear-gradient(0deg,   transparent, transparent 31px, rgba(200,0,0,.05) 31px, rgba(200,0,0,.05) 32px),
+    repeating-linear-gradient(90deg,  transparent, transparent 63px, rgba(200,0,0,.04) 63px, rgba(200,0,0,.04) 64px);
+}
+.world-castle::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 100%, rgba(180,20,0,.4)  0%, transparent 70%),
+    radial-gradient(ellipse 40% 30% at 10%  30%, rgba(255,60,0,.15) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 90%  40%, rgba(200,0,0,.15)  0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* Card bg adapts per world */
+.world-forest .px-card,
+.world-forest .quest,
+.world-forest .edu-card,
+.world-forest .project-card { background: #0f2010; }
+
+.world-cave .px-card,
+.world-cave .quest,
+.world-cave .edu-card,
+.world-cave .project-card { background: #221004; }
+
+.world-ocean .px-card,
+.world-ocean .quest,
+.world-ocean .edu-card,
+.world-ocean .project-card { background: #060f24; }
+
+.world-ghost .px-card,
+.world-ghost .quest,
+.world-ghost .edu-card,
+.world-ghost .project-card { background: #140a1e; }
+
+.world-castle .px-card,
+.world-castle .quest,
+.world-castle .edu-card,
+.world-castle .project-card,
+.world-castle .game-over-box { background: #220808; }
 
 .stage-tag {
   font-family: var(--px);
